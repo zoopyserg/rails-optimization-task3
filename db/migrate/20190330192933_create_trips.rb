@@ -8,5 +8,9 @@ class CreateTrips < ActiveRecord::Migration[5.2]
       t.integer :price_cents
       t.integer :bus_id
     end
+
+    add_index :trips, :from_id
+    add_index :trips, :to_id
+    add_index :trips, :bus_id
   end
 end
